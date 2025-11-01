@@ -179,9 +179,11 @@ def main():
 
     if args.out_filename is not None:
         try:
-            from moviepy.editor import ImageSequenceClip
+            # from moviepy.editor import ImageSequenceClip
+            from moviepy import ImageSequenceClip
         except ImportError:
-            raise ImportError('Please install moviepy to enable output file.')
+            # raise ImportError('Please install moviepy to enable output file.')
+            raise ImportError('Please install a compatible version of moviepy (>=2.0 uses top-level imports).')
 
         # frames_batches shape [B, T, H, W, 3], in RGB order
         frames_batches = (results[0] * 255.).numpy().astype(np.uint8)

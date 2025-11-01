@@ -149,3 +149,6 @@ mmaction/tools/*
 !demo/*.ipynb
 !projects/stad_tutorial/*.ipynb
 mmaction/.mim
+
+# 忽略用于验证环境安装可用的文件
+tsn_imagenet-pretrained-r50_8xb32-1x1x8-100e_kinetics400-rgb.py
