@@ -26,3 +26,10 @@ python demo/demo.py tsn_imagenet-pretrained-r50_8xb32-1x1x8-100e_kinetics400-rgb
     tsn_imagenet-pretrained-r50_8xb32-1x1x8-100e_kinetics400-rgb_20220906-2692d16c.pth \
     demo/demo.mp4 tools/data/kinetics/label_map_k400.txt
 ```
+
+```bash
+# 高版本torch加载训练权重的方式有所变化，直接在安装的包里改
+python -c "import inspect,mmengine.runner.checkpoint as ckpt;print(inspect.getsourcefile(ckpt))"
+# /home/diobrando/anaconda3/envs/mmaction/lib/python3.11/site-packages/mmengine/runner/checkpoint.py
+# 运行上面的命令获得文件路径，将文件中所有torch.load(一共四处)加上weights_only=False
+```
